@@ -1,0 +1,147 @@
+:root {
+  --bg: #d7dbdf;
+  --card-bg: #f6f8fb;
+  --card-border: #cad2db;
+  --title: #b9c8d3;
+  --text: #06080b;
+  --danger: #f04c45;
+  --blue-1: #39b4e8;
+  --blue-2: #0f9adc;
+  --red-1: #ea6f76;
+  --red-2: #ff4b44;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  font-family: Inter, "Segoe UI", system-ui, -apple-system, sans-serif;
+  background: var(--bg);
+  color: var(--text);
+}
+
+.app {
+  width: min(920px, 94vw);
+  margin: 0 auto;
+  padding: 28px 0 48px;
+}
+
+h1 {
+  margin: 8px 0 26px;
+  text-align: center;
+  font-size: clamp(2.5rem, 8vw, 5.25rem);
+  font-weight: 900;
+  letter-spacing: 0.08em;
+  color: var(--title);
+  text-shadow: -2px -2px 0 #56616c, 2px -2px 0 #56616c, -2px 2px 0 #56616c,
+    2px 2px 0 #56616c;
+}
+
+.info-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 18px;
+}
+
+.info-card,
+.status-card {
+  border-radius: 12px;
+  border: 4px solid var(--card-border);
+  background: var(--card-bg);
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.08);
+}
+
+.info-card {
+  display: flex;
+  justify-content: center;
+  align-items: baseline;
+  gap: 14px;
+  min-height: 94px;
+  padding: 12px;
+  font-size: clamp(1.5rem, 3vw, 2.2rem);
+}
+
+.info-card span,
+.info-card strong,
+.status-card p {
+  font-weight: 800;
+}
+
+.status-card {
+  width: min(560px, 88%);
+  margin: 46px auto 12px;
+  min-height: 120px;
+  display: grid;
+  place-items: center;
+}
+
+.status-card p {
+  margin: 0;
+  font-size: clamp(2rem, 5vw, 3.25rem);
+}
+
+.off {
+  color: var(--danger);
+}
+
+.mascot-wrap {
+  margin: 28px auto 26px;
+  width: min(390px, 70vw);
+  aspect-ratio: 1 / 1;
+}
+
+.mascot-wrap img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  border-radius: 8px;
+  mix-blend-mode: multiply;
+}
+
+.button-row {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 24px;
+}
+
+.action-button {
+  border: 0;
+  border-radius: 26px;
+  min-height: 130px;
+  font-weight: 800;
+  letter-spacing: 0.03em;
+  font-size: clamp(1.4rem, 3.6vw, 3rem);
+  color: #fff;
+  box-shadow: 0 8px 14px rgba(0, 0, 0, 0.16);
+  cursor: pointer;
+}
+
+.interstitial {
+  background: linear-gradient(90deg, var(--blue-1), var(--blue-2));
+}
+
+.rewarded {
+  background: linear-gradient(90deg, var(--red-1), var(--red-2));
+}
+
+.helper-text {
+  text-align: center;
+  margin-top: 14px;
+  font-weight: 600;
+  min-height: 1.2em;
+}
+
+@media (max-width: 720px) {
+  .info-grid,
+  .button-row {
+    grid-template-columns: 1fr;
+  }
+
+  .status-card p {
+    text-align: center;
+    line-height: 1.1;
+  }
+}
